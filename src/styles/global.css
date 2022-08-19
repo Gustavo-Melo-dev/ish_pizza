@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lexend', sans-serif;
+    color: inherit;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: linear-gradient( to right, black, red);
+    padding: 1rem;
+}
+
+body h2 {
+    color: white;
+    margin-top: 1rem;
+}
+
+.app-body {
+    display: flex;
+    justify-content: space-around;
+}
+
+@media screen and (max-width: 768px) {
+    .app-body {
+        flex-direction: column;
+        margin-left: 6%;
+    }
+}
