@@ -1,0 +1,23 @@
+.head-table, .body-table {
+    color: white;
+}
+
+.body-table tr:hover {
+    background-color: #eee;
+}
+
+@media screen and (min-width: 1200px) {
+    .app-table {
+        width: 70% !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .table-mobile {
+        display: none !important;
+    }
+    .app-table {
+        width: 100% !important;
+        margin-left: -3%;
+    }
+}
