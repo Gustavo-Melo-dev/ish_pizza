@@ -19,7 +19,8 @@ body h2 {
 
 .app-body {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 @media screen and (max-width: 768px) {
