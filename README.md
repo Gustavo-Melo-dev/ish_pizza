@@ -6,7 +6,7 @@ The project is divided into two parts, the backend is in the server folder and t
 # Backend
 Enter the server folder and run the command: "pip install fastapi uvicorn" to install the backend dependencies. Besides, it was made with MySQL and the name of the bank is "fastapi" to be able to make the connection.
 
-After that in a separate terminal run the command "uvicorn main:app --reload"
+After that in a separate terminal run the command: "uvicorn main:app --reload".
 
 # Frontend
 In the root folder, run the command: "npm install" to install the frontend dependencies.
