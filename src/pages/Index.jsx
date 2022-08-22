@@ -2,6 +2,7 @@ import React from 'react'
 import CardPizza from '../components/CardPizza/CardPizza'
 import TablePizza from '../components/TablePizza/TablePizza'
 import { useEffect, useState } from 'react'
+import '../styles/global.css'
 
 const Index = () => {
   let [pizzas, setPizzas] = useState([])
@@ -25,6 +26,7 @@ const Index = () => {
         <div className="title-catalog">
           <h2>Catálogo</h2>
         </div>
+        <p className="descount">Padidos acima de 2 pizzas tem 30% de desconto!</p>
         <div className="app-body">
           {pizzas.map((pizza, key) => (
             <CardPizza key={pizza.name} name={pizza.name} price={pizza.price} pizza={pizza} id={key} />
@@ -35,7 +37,10 @@ const Index = () => {
         <div className="title-request">
           <h2>Pedidos</h2>
           <div className="app-body">
-            <TablePizza />
+            {
+              pizzas.length ? (
+                <TablePizza />
+              ): "Nenhum pedido realizado!"}
           </div>
         </div>
       </div>
