@@ -32,6 +32,10 @@ const formPizza = () => {
 
   let submitData = async () => {
     try {
+      if(pizza.quantity > 2){
+        pizza.price = pizza.price - (pizza.price * 0.3)
+      }
+      console.log(pizza.price)
       await fetch(`http://127.0.0.1:8000/pedir-pizza/${pizzaId}`, {
         method: 'POST',
         headers: {
@@ -40,7 +44,7 @@ const formPizza = () => {
         body: JSON.stringify({
           "name": pizza.name,
           "name_pizza": pizza.name_pizza,
-          "price": parseFloat(pizza.price),
+          "price": parseFloat(pizza.price * pizza.quantity),
           "quantity": pizza.quantity
         }),
       })

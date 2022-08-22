@@ -27,46 +27,53 @@ const table = () => {
 
     return (
         <div className="app-table">
-            <Table hover xs="12">
-                <thead className='head-table'>
-                    <tr>
-                        <th>#</th>
-                        <th>Nome</th>
-                        <th>Pizza</th>
-                        <th className="table-mobile">Preço</th>
-                        <th className="table-mobile">Quantidade</th>
-                        <th>Ação</th>
-                    </tr>
-                </thead>
-                <tbody
-                    className='body-table'>
-                    {
-                        pizzas.map((pizza) => (
-                            <tr key={pizza.id}>
-                                <td>{pizza.id}</td>
-                                <td>{pizza.name}</td>
-                                <td>{pizza.name_pizza}</td>
-                                <td className="table-mobile">{pizza.price}</td>
-                                <td className="table-mobile">{pizza.quantity}</td>
-                                <td>
-                                    <FaRegTrashAlt onClick={() => { deletePizza(pizza.id) }} />
-                                    <ToastContainer
-                                        position="top-right"
-                                        autoClose={5000}
-                                        hideProgressBar={false}
-                                        newestOnTop={false}
-                                        closeOnClick
-                                        rtl={false}
-                                        pauseOnFocusLoss
-                                        draggable
-                                        pauseOnHover
-                                    />
-                                </td>
+            {
+                pizzas.length ? (
+                    <Table hover xs="12">
+                        <thead className='head-table'>
+                            <tr>
+                                <th>#</th>
+                                <th>Nome</th>
+                                <th>Pizza</th>
+                                <th className="table-mobile">Preço</th>
+                                <th className="table-mobile">Quantidade</th>
+                                <th>Ação</th>
                             </tr>
-                        ))
-                    }
-                </tbody>
-            </Table>
+                        </thead>
+                        <tbody
+                            className='body-table'>
+                            {
+                                pizzas.map((pizza) => (
+                                    <tr key={pizza.id}>
+                                        <td>{pizza.id}</td>
+                                        <td>{pizza.name}</td>
+                                        <td>{pizza.name_pizza}</td>
+                                        <td className="table-mobile">R$ {pizza.price}</td>
+                                        <td className="table-mobile">{pizza.quantity}</td>
+                                        <td>
+                                            <FaRegTrashAlt onClick={() => { deletePizza(pizza.id) }} />
+                                            <ToastContainer
+                                                position="top-right"
+                                                autoClose={5000}
+                                                hideProgressBar={false}
+                                                newestOnTop={false}
+                                                closeOnClick
+                                                rtl={false}
+                                                pauseOnFocusLoss
+                                                draggable
+                                                pauseOnHover
+                                            />
+                                        </td>
+                                    </tr>
+                                ))
+                            }
+                        </tbody>
+                    </Table>
+                ) : 
+                    <div className="nothing-request d-flex justify-content-center">
+                        <p>Nenhum pedido realizado!</p>
+                    </div>
+                }
         </div>
     )
 }
