@@ -26,7 +26,7 @@ const Index = () => {
         <div className="title-catalog">
           <h2>Catálogo</h2>
         </div>
-        <p className="descount">Padidos acima de 2 pizzas tem 30% de desconto!</p>
+        <p className="descount">Pedidos acima de 2 pizzas tem 30% de desconto!</p>
         <div className="app-body">
           {pizzas.map((pizza, key) => (
             <CardPizza key={pizza.name} name={pizza.name} price={pizza.price} pizza={pizza} id={key} />
